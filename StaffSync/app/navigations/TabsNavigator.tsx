@@ -1,23 +1,17 @@
-import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NoticiasScreen from "@/views/NoticiasScreen";
 import QrcodeScreen from "@/views/QrcodeScreen";
 import MensagemScreen from "@/views/MensagemScreen";
 import ContatosScreen from "@/views/ContatosScreen";
-import ConfiguracoeScreen from "@/views/ConfiguracaoScreen";
+import ConfiguracaoScreen from "@/views/ConfiguracaoScreen";
 import { Icones } from "@/styles/NavegacaoStyles";
 
 const Tab = createBottomTabNavigator();
 
-const Navegacao = () => {
+const TabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        headerStyle: { height: 30 },
-        tabBarStyle: {
-          height: 80,
-          alignItems: "center",
-        },
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -62,6 +56,7 @@ const Navegacao = () => {
           tabBarLabel: "Noticias",
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
+          headerShown: false,
         }}
       />
       <Tab.Screen
@@ -71,6 +66,7 @@ const Navegacao = () => {
           tabBarLabel: "Contatos",
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
+          headerShown: false,
         }}
       />
 
@@ -81,6 +77,7 @@ const Navegacao = () => {
           tabBarLabel: "QR Code",
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
+          headerShown: false,
         }}
       />
 
@@ -91,19 +88,21 @@ const Navegacao = () => {
           tabBarLabel: "Conversas",
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
+          headerShown: false,
         }}
       />
       <Tab.Screen
         name="Configuração"
-        component={ConfiguracoeScreen}
+        component={ConfiguracaoScreen}
         options={{
           tabBarLabel: "Configuração",
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
   );
 };
 
-export default Navegacao;
+export default TabNavigator;
