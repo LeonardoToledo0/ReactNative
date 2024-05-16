@@ -1,8 +1,7 @@
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 import { View, Text, TextInput, Image } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { corPrimaria } from "./GlobalStyles";
-import { Divider, RadioButton } from "react-native-paper";
+import { Divider } from "react-native-paper";
 
 // Stylos do Screen Login
 export const ViewLogin = styled(View)`
@@ -66,6 +65,7 @@ export const LoginContent = styled(View)`
   display: flex;
   align-items: center;
   justify-content: center;
+  height: auto;
   margin-top: 10px;
 `;
 export const LoginTitle = styled(Text)`
@@ -83,24 +83,28 @@ export const LoginText = styled(Text)`
 `;
 
 export const LoginLink = styled(Text)`
-  color: ${corPrimaria};
+  color: tomato;
   font-family: "Poppins";
 `;
 
 export const LoginButton = styled(TouchableOpacity)`
-  padding: 4% 35%;
+  padding: 14px 0;
+  width: 305px;
   background: tomato;
   border-radius: 8px;
   margin-top: 30px;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const TextButton = styled(Text)`
   font-size: 16px;
   font-family: "Poppins";
   color: white;
+  text-align: center;
 `;
 export const LoginInputWrapper = styled(View)`
-  width: 80%;
+  width: 300px;
   border-bottom-width: 2px;
   border-bottom-color: tomato;
   margin: 10px;
@@ -114,4 +118,17 @@ export const LoginInput = styled(TextInput)`
 `;
 export const PlaceholderText = styled.Text`
   color: gray;
+`;
+// Styles Loanding
+
+export const LoandingView = styled(View)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;
+export const LoandingImage = styled(Image)`
+  width: 200px;
+  height: 200px;
 `;

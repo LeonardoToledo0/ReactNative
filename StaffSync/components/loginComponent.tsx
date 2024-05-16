@@ -28,24 +28,26 @@ export default function LoginComponent() {
   };
 
   return (
-    <LoginContent>
-      <LoginText>
-        Ao fazer login você concorda com nossos Termos e{" "}
-        <LoginLink>Política de Privacidade</LoginLink>
-      </LoginText>
-      <LoginInputWrapper>
-        <LoginInput placeholder="Email" placeholderTextColor="gray" />
-      </LoginInputWrapper>
-      <LoginInputWrapper>
-        <LoginInput
-          placeholder="Password"
-          placeholderTextColor="gray"
-          secureTextEntry
-        />
-      </LoginInputWrapper>
-      <LoginButton onPress={handleLogin}>
-        <TextButton>Login</TextButton>
-      </LoginButton>
-    </LoginContent>
+    <>
+      <LoginContent>
+        <LoginText>
+          Ao fazer login você concorda com nossos Termos e{" "}
+          <LoginLink>Política de Privacidade</LoginLink>
+        </LoginText>
+        <LoginInputWrapper>
+          <LoginInput placeholder="Email" placeholderTextColor="gray" />
+        </LoginInputWrapper>
+        <LoginInputWrapper>
+          <LoginInput
+            placeholder="Password"
+            placeholderTextColor="gray"
+            secureTextEntry
+          />
+        </LoginInputWrapper>
+        <LoginButton onPress={handleLogin}>
+          <TextButton>Login</TextButton>
+        </LoginButton>
+      </LoginContent>
+    </>
   );
 }

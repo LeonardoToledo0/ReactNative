@@ -6,6 +6,7 @@ import LoginScreen from "@/views/LoginScreen";
 import { store } from "@/hooks/configureStore";
 import * as Font from "expo-font";
 import { Text } from "react-native";
+import LoadingScreen from "@/views/LoadingScreen";
 
 const Stack = createStackNavigator();
 
@@ -23,9 +24,21 @@ export default function App() {
     <Provider store={store}>
       <Stack.Navigator>
         <Stack.Screen
+          name="Loading"
+          component={LoadingScreen}
+          options={{
+            headerShown: false,
+            cardStyle: { flex: 1, backgroundColor: "white" },
+          }}
+        />
+
+        <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{ headerShown: false }}
+          options={{
+            headerShown: false,
+            cardStyle: { flex: 1, backgroundColor: "white" },
+          }}
         />
         <Stack.Screen
           name="Home"

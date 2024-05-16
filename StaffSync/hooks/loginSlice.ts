@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { act } from "react-test-renderer";
 
 interface Login {
   login: any[];
@@ -8,6 +9,7 @@ interface Login {
   erro: string | null;
   activeContent: string | null;
   selectedButton: string | null;
+  isAppLoaded: boolean;
 }
 
 const initialState: Login = {
@@ -18,6 +20,7 @@ const initialState: Login = {
   erro: null,
   activeContent: null,
   selectedButton: null,
+  isAppLoaded: false,
 };
 
 const loginSlice = createSlice({
@@ -46,6 +49,9 @@ const loginSlice = createSlice({
     setselectedButton: (state, action: PayloadAction<string | null>) => {
       state.selectedButton = action.payload;
     },
+    setisAppLoaded: (state, action: PayloadAction<boolean>) => {
+      state.isAppLoaded = action.payload;
+    },
   },
 });
 
@@ -57,6 +63,7 @@ export const {
   setpassword,
   setactiveContent,
   setselectedButton,
+  setisAppLoaded,
 } = loginSlice.actions;
 
 export default loginSlice.reducer;
