@@ -1,12 +1,12 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface Config {
-  selectConfig: string | null;
+  selectConfig: string;
   activeContent: string | null;
 }
 
 const initialState: Config = {
-  selectConfig: null,
+  selectConfig: "",
   activeContent: null,
 };
 
@@ -14,7 +14,7 @@ const ConfigSlice = createSlice({
   name: "Config",
   initialState,
   reducers: {
-    setselectConfig: (state, action: PayloadAction<string | null>) => {
+    setselectConfig: (state, action: PayloadAction<string>) => {
       state.selectConfig = action.payload;
     },
     setactiveContent: (state, action: PayloadAction<string | null>) => {

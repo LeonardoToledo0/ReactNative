@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { ScrollView, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { List } from "react-native-paper";
 
 // Stylos da Configuração Screen
 
@@ -42,3 +43,12 @@ export const ConfigIcons = styled(View)`
 `;
 
 export const TouchIcons = styled(TouchableOpacity)``;
+
+// Stylos do Configuração Componetes
+
+export const ContentConfiguracao = styled(View)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;

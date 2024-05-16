@@ -16,9 +16,10 @@ import {
   TextoRenderizar,
 } from "@/styles/LoginStyles";
 import SelectorConfig from "@/utils/selectorConfig";
-import { Avatar } from "react-native-paper";
+import { Avatar, Icon, SegmentedButtons } from "react-native-paper";
 import { useDispatch, useSelector } from "react-redux";
 import { Feather } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native";
 
 const Perfil = require("../assets/images/perfil.jpg");
 
@@ -45,13 +46,13 @@ export default function ConfiguracaoScreen() {
       <ConfigCargo>Desenvolvedor</ConfigCargo>
       <ConfigIcons>
         <TouchIcons onPress={() => {}}>
-          <Feather name="instagram" color={"tomato"} size={24} />
+          <Icon source="instagram" color={"tomato"} size={30} />
         </TouchIcons>
         <TouchIcons onPress={() => {}}>
-          <Feather name="facebook" color={"tomato"} size={24} />
+          <Icon source="facebook" color={"tomato"} size={30} />
         </TouchIcons>
         <TouchIcons onPress={() => {}}>
-          <Feather name="linkedin" color={"tomato"} size={24} />
+          <Icon source="linkedin" color={"tomato"} size={30} />
         </TouchIcons>
       </ConfigIcons>
       <ContetTextoRenderizar>
