@@ -5,7 +5,6 @@ import TabNavigator from "./navigations/TabsNavigator";
 import LoginScreen from "@/views/LoginScreen";
 import { store } from "@/hooks/configureStore";
 import * as Font from "expo-font";
-import { Text } from "react-native";
 import LoadingScreen from "@/views/LoadingScreen";
 
 const Stack = createStackNavigator();
@@ -43,7 +42,9 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={TabNavigator}
-          options={{ headerShown: false }}
+          options={{
+            headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </Provider>
