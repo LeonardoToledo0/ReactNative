@@ -1,11 +1,10 @@
 import React from "react";
-import { View } from "react-native";
-import { Text } from "react-native-paper";
-
+import NavigationsAgenda from "@/app/navigations/NavigationsAgenda";
+import Agendas from "@/components/agendaComponent";
 export default function AgendaScreen() {
   return (
-    <View>
-      <Text variant="displayLarge">Agenda</Text>
-    </View>
+    <>
+      <NavigationsAgenda />
+    </>
   );
 }
