@@ -16,10 +16,8 @@ import {
   TextoRenderizar,
 } from "@/styles/LoginStyles";
 import SelectorConfig from "@/utils/selectorConfig";
-import { Avatar, Icon, SegmentedButtons } from "react-native-paper";
+import { Avatar, Icon } from "react-native-paper";
 import { useDispatch, useSelector } from "react-redux";
-import { Feather } from "@expo/vector-icons";
-import { SafeAreaView } from "react-native";
 
 const Perfil = require("../assets/images/perfil.jpg");
 

@@ -7,7 +7,6 @@ export const QRcodeContent = styled(View)`
   flex: 1;
   align-items: center;
   justify-content: center;
-  background: white;
 `;
 
 export const ContentTile = styled(View)`
@@ -27,7 +26,7 @@ export const Generator = styled(View)`
   border-radius: 8px;
   align-items: center;
   justify-content: center;
-  background: #f1f1f1;
+  background: white;
 `;
 export const TextValue = styled(Text)`
   font-size: 16px;

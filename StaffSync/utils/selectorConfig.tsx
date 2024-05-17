@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/hooks/configureStore";
 import { setactiveContent } from "@/hooks/configSlice";
 import PerfilComponent from "@/components/PerfilComponent";
-import ConfiguracoesComponent from "@/components/configuracoesComponent"; // Corrigido o nome do componente
+import ConfiguracoesComponent from "@/components/configuracoesComponent";
 
 const SelectorConfig = () => {
   const dispatch = useDispatch();

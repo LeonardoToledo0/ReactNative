@@ -2,7 +2,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NoticiasScreen from "@/views/NoticiasScreen";
 import QrcodeScreen from "@/views/QrcodeScreen";
 import MensagemScreen from "@/views/MensagemScreen";
-
 import ConfiguracaoScreen from "@/views/ConfiguracaoScreen";
 import { Icones } from "@/styles/NavegacaoStyles";
 import AgendaScreen from "@/views/AgendaScreen";

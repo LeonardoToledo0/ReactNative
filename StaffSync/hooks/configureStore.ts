@@ -4,6 +4,7 @@ import QrcodeReducer from "@/hooks/qrSlice";
 import ConfigReducer from "@/hooks/configSlice";
 import FabReducer from "@/hooks/fabslice";
 import NavigationsReducer from "@/hooks/navigationsSlice";
+import ConversasReducer from "@/hooks/conversasSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     Config: ConfigReducer,
     Fab: FabReducer,
     Navigations: NavigationsReducer,
+    Conversas: ConversasReducer,
   },
 });
 

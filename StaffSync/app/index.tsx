@@ -6,6 +6,7 @@ import LoginScreen from "@/views/LoginScreen";
 import { store } from "@/hooks/configureStore";
 import * as Font from "expo-font";
 import LoadingScreen from "@/views/LoadingScreen";
+import NavigationsMensagem from "./navigations/NavigationsMesnsagem";
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ export default function App() {
             cardStyle: { flex: 1, backgroundColor: "white" },
           }}
         />
+
         <Stack.Screen
           name="Home"
           component={TabNavigator}
