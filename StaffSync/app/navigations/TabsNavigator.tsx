@@ -2,9 +2,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import NoticiasScreen from "@/views/NoticiasScreen";
 import QrcodeScreen from "@/views/QrcodeScreen";
 import MensagemScreen from "@/views/MensagemScreen";
-import ContatosScreen from "@/views/ContatosScreen";
+
 import ConfiguracaoScreen from "@/views/ConfiguracaoScreen";
 import { Icones } from "@/styles/NavegacaoStyles";
+import AgendaScreen from "@/views/AgendaScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -19,8 +20,8 @@ const TabNavigator = () => {
             iconName = focused ? "newspaper" : "newspaper-outline";
           } else if (route.name === "Conversas") {
             iconName = focused ? "chatbubble" : "chatbubble-outline";
-          } else if (route.name === "Contatos") {
-            iconName = focused ? "person" : "person-outline";
+          } else if (route.name === "Agenda") {
+            iconName = focused ? "calendar" : "calendar-outline";
           } else if (route.name === "Configuração") {
             iconName = focused ? "options" : "options-outline";
           } else if (route.name === "QR Code") {
@@ -60,10 +61,10 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="Contatos"
-        component={ContatosScreen}
+        name="Agenda"
+        component={AgendaScreen}
         options={{
-          tabBarLabel: "Contatos",
+          tabBarLabel: "Agenda",
           tabBarActiveTintColor: "tomato",
           tabBarInactiveTintColor: "gray",
           headerShown: false,

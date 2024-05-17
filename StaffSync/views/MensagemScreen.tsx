@@ -1,11 +1,10 @@
+import FabButton from "@/components/fabButtonComponent";
 import React from "react";
-import { View } from "react-native";
-import { Text } from "react-native-paper";
 
 export default function MensagemScreen() {
   return (
-    <View>
-      <Text variant="displayLarge">Mensagem</Text>
-    </View>
+    <>
+      <FabButton />
+    </>
   );
 }
