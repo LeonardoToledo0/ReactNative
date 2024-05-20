@@ -25,21 +25,21 @@ export default function FabButton() {
       onPress: () => {
         navigation.navigate("Contatos");
       },
-      color: "white",
+      color: "tomato",
     },
     {
       icon: "chat-outline",
       onPress: () => {
         navigation.navigate("Mensagens");
       },
-      color: "white",
+      color: "tomato",
     },
     {
       icon: "cellphone",
       onPress: () => {
         navigation.navigate("Ligações");
       },
-      color: "white",
+      color: "tomato",
     },
   ];
 

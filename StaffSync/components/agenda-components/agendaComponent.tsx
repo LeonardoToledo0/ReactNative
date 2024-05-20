@@ -3,15 +3,15 @@ import React from "react";
 import { Avatar, Card, Divider, TouchableRipple } from "react-native-paper";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { ContentAgenda } from "@/styles/AgendaStyles";
-import { ScrollView, Text } from "react-native";
+import { ScrollView } from "react-native";
 import { ConfigNome, SobreNome } from "@/styles/ConfigStyles";
 
 type RootStackParamList = {
   Salão: undefined;
   Churrasqueira: undefined;
 };
-const churras = require("../assets/images/churras.jpg");
-const salao = require("../assets/images/salao.jpg");
+const churras = require("../../assets/images/churras.jpg");
+const salao = require("../../assets/images/salao.jpg");
 export default function Agendas() {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();

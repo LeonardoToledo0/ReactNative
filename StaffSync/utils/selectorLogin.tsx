@@ -2,8 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/hooks/configureStore";
 import { setactiveContent } from "@/hooks/loginSlice";
-import LoginComponent from "@/components/loginComponent";
-import SingUpComponent from "@/components/singupConponent";
+import LoginComponent from "@/components/login-components/loginComponent";
+import SingUpComponent from "@/components/login-components/singupConponent";
 
 const SelectorLogin = () => {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Contato from "@/components/contatoComponent";
-import Conversas from "@/components/conversasComponent";
-import Ligacoes from "@/components/ligacoesComponent";
+import Contato from "@/components/contato-components/contatoComponent";
+import Conversas from "@/components/contato-components/conversasComponent";
+import Ligacoes from "@/components/contato-components/ligacoesComponent";
 
 const Stack = createNativeStackNavigator();
 

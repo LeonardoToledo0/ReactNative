@@ -1,6 +1,6 @@
-import Contato from "@/components/contatoComponent";
-import Conversas from "@/components/conversasComponent";
-import Ligacoes from "@/components/ligacoesComponent";
+import Contato from "@/components/contato-components/contatoComponent";
+import Conversas from "@/components/contato-components/conversasComponent";
+import Ligacoes from "@/components/contato-components/ligacoesComponent";
 import { RootState } from "@/hooks/configureStore";
 import { setactiveContent } from "@/hooks/conversasSlice";
 import React from "react";
