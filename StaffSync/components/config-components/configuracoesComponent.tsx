@@ -1,8 +1,9 @@
 import React from "react";
 import { ContentConfiguracao } from "@/styles/ConfigStyles";
-import { Divider, List, TouchableRipple } from "react-native-paper";
+import { List, TouchableRipple } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { View } from "react-native";
 
 type RootStackParamList = {
   Avatar: undefined;
@@ -18,13 +19,21 @@ export default function ConfiguracoesComponent() {
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();
   return (
     <>
-      <ContentConfiguracao>
+      <View
+        style={{
+          display: "flex",
+          height: 1000,
+          alignItems: "center",
+          shadowOpacity: 0.3,
+          marginTop: 10,
+        }}
+      >
         <List.Section
           style={{
-            width: 350,
+            width: 380,
             backgroundColor: "white",
             borderRadius: 8,
-            marginTop: 50,
+
             shadowOpacity: 0.3,
           }}
         >
@@ -189,7 +198,7 @@ export default function ConfiguracoesComponent() {
             />
           </TouchableRipple>
         </List.Section>
-      </ContentConfiguracao>
+      </View>
     </>
   );
 }

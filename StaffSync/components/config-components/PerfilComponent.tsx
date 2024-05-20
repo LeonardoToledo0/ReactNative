@@ -6,7 +6,15 @@ export default function PerfilComponent() {
   return (
     <>
       <ScrollView>
-        <View style={{ flex: 1, alignItems: "center", shadowOpacity: 0.3 }}>
+        <View
+          style={{
+            display: "flex",
+            height: 500,
+            alignItems: "center",
+            shadowOpacity: 0.3,
+            marginTop: 10,
+          }}
+        >
           <Card
             style={{
               width: 380,
