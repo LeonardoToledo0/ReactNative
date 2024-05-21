@@ -2,8 +2,8 @@ import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Avatar, Card, Divider, TouchableRipple } from "react-native-paper";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { ContentAgenda } from "@/styles/AgendaStyles";
-import { ScrollView } from "react-native";
+
+import { ScrollView, View } from "react-native";
 import { ConfigNome, SobreNome } from "@/styles/ConfigStyles";
 
 type RootStackParamList = {
@@ -21,7 +21,7 @@ export default function Agendas() {
         <ConfigNome style={{ marginTop: 20 }}>
           Faça Agora sua <SobreNome>Reserva</SobreNome>
         </ConfigNome>
-        <ContentAgenda>
+        <View style={{ flex: 1 }}>
           <Divider
             style={{
               width: 380,
@@ -90,7 +90,7 @@ export default function Agendas() {
               margin: 5,
             }}
           />
-        </ContentAgenda>
+        </View>
       </ScrollView>
     </>
   );

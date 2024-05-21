@@ -5,7 +5,8 @@ import { setopen } from "@/hooks/fabslice";
 import { Portal, FAB, Provider } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { ContentFab } from "@/styles/MensagensStyles";
+
+import { View } from "react-native";
 
 type RootStackParamList = {
   Mensagens: undefined;
@@ -47,7 +48,14 @@ export default function FabButton() {
     dispatch(setopen(open));
 
   return (
-    <ContentFab>
+    <View
+      style={{
+        width: 100,
+        height: 100,
+        marginTop: -100,
+        alignSelf: "flex-end",
+      }}
+    >
       <Provider>
         <Portal>
           <FAB.Group
@@ -63,6 +71,6 @@ export default function FabButton() {
           />
         </Portal>
       </Provider>
-    </ContentFab>
+    </View>
   );
 }
