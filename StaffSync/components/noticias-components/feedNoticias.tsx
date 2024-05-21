@@ -8,6 +8,7 @@ import {
   Title,
   TouchableRipple,
   Divider,
+  Button,
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "react-native-screens/lib/typescript/native-stack/types";
@@ -127,7 +128,7 @@ export default function FeedNoticias() {
           </TouchableRipple>
 
           <View style={{ margin: 10, flexDirection: "row", gap: 15 }}>
-            <Icon source="thumb-up-outline" color="tomato" size={30} />
+            <Icon source="heart-outline" color="tomato" size={30} />
             <TouchableRipple onPress={() => handleNoticiaPress(noticia)}>
               <Icon source="chat-outline" color="tomato" size={30} />
             </TouchableRipple>

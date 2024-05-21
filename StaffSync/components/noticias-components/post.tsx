@@ -3,6 +3,7 @@ import { View, Text, ScrollView } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import { Avatar, Card } from "react-native-paper";
+import NoticiasInput from "./NoticiasInput";
 
 type RootStackParamList = {
   Post: { noticia: Noticia };
@@ -23,6 +24,10 @@ interface Noticia {
 const Post: React.FC<PostScreenProps> = ({ route }) => {
   const navigation = useNavigation();
   const { noticia } = route.params;
+
+  const handleMessageSend = (message: string) => {
+    console.log("Mensagem enviada:", message);
+  };
 
   return (
     <ScrollView>
@@ -77,6 +82,7 @@ const Post: React.FC<PostScreenProps> = ({ route }) => {
           </Text>
         </View>
       </View>
+      <NoticiasInput onSend={handleMessageSend} />
     </ScrollView>
   );
 };

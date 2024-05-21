@@ -14,9 +14,21 @@ const NavigationsNoticia = () => {
         headerTitleStyle: { fontFamily: "Poppins" },
       }}
     >
-      <Stack.Screen name="Feed" component={FeedNoticias} />
-      <Stack.Screen name="Postar" component={PostarNoticias} />
-      <Stack.Screen name="Post" component={Post as React.ComponentType} />
+      <Stack.Screen
+        name="Feed"
+        component={FeedNoticias}
+        options={{ title: "Noticias" }}
+      />
+      <Stack.Screen
+        name="Postar"
+        component={PostarNoticias}
+        options={{ title: "Fazer uma Postagem" }}
+      />
+      <Stack.Screen
+        name="Post"
+        component={Post as React.ComponentType}
+        options={{ title: "Detalhes da Noticias" }}
+      />
     </Stack.Navigator>
   );
 };
