@@ -30,7 +30,7 @@ export default function ConfiguracoesComponent() {
       >
         <List.Section
           style={{
-            width: 380,
+            width: 400,
             backgroundColor: "white",
             borderRadius: 8,
 

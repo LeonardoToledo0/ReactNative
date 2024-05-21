@@ -37,13 +37,13 @@ export default function AgendaSalao() {
 
   return (
     <ScrollView>
-      <Card style={{ marginTop: 20, width: 380, alignSelf: "center" }}>
+      <Card style={{ marginTop: 20, width: 400, alignSelf: "center" }}>
         <Card.Cover source={salao} />
       </Card>
       <Card
         style={{
           marginTop: 20,
-          width: 380,
+          width: 400,
           alignSelf: "center",
           backgroundColor: "white",
         }}
@@ -78,7 +78,7 @@ export default function AgendaSalao() {
       <View
         style={{
           display: "flex",
-          width: 380,
+          width: 400,
           marginTop: 20,
           alignSelf: "center",
           backgroundColor: "white",
@@ -117,7 +117,7 @@ export default function AgendaSalao() {
 
           alignSelf: "center",
           backgroundColor: "tomato",
-          width: 380,
+          width: 400,
           borderRadius: 8,
         }}
         onPress={() => {}}

@@ -17,7 +17,7 @@ export default function PerfilComponent() {
         >
           <Card
             style={{
-              width: 380,
+              width: 400,
               backgroundColor: "white",
             }}
           >

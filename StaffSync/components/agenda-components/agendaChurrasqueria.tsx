@@ -36,13 +36,13 @@ export default function AgendaChurrasqueira() {
 
   return (
     <ScrollView>
-      <Card style={{ marginTop: 20, width: 380, alignSelf: "center" }}>
+      <Card style={{ marginTop: 20, width: 400, alignSelf: "center" }}>
         <Card.Cover source={churras} />
       </Card>
       <Card
         style={{
           marginTop: 20,
-          width: 380,
+          width: 400,
           alignSelf: "center",
           backgroundColor: "white",
         }}
@@ -77,7 +77,7 @@ export default function AgendaChurrasqueira() {
       <View
         style={{
           display: "flex",
-          width: 380,
+          width: 400,
           marginTop: 20,
           alignSelf: "center",
           backgroundColor: "white",
@@ -113,10 +113,9 @@ export default function AgendaChurrasqueira() {
           padding: 12,
           marginTop: 20,
           marginBottom: 20,
-
           alignSelf: "center",
           backgroundColor: "tomato",
-          width: 380,
+          width: 400,
           borderRadius: 8,
         }}
         onPress={() => {}}

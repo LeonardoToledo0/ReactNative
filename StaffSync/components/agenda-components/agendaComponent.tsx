@@ -22,21 +22,21 @@ export default function Agendas() {
           Faça Agora sua <SobreNome>Reserva</SobreNome>
         </ConfigNome>
         <View style={{ flex: 1 }}>
-          <Divider
-            style={{
-              width: 380,
-              backgroundColor: "tomato",
-              alignSelf: "center",
-              marginTop: 50,
-            }}
-          />
           <TouchableRipple
             onPress={() => {
               navigation.navigate("Churrasqueira");
             }}
           >
             <Card.Title
-              style={{ marginTop: 10 }}
+              style={{
+                marginTop: 10,
+                backgroundColor: "white",
+                width: 400,
+                alignSelf: "center",
+                borderRadius: 8,
+                shadowOpacity: 0.3,
+                height: 90,
+              }}
               title="Churrasqueira"
               subtitle="Agendar"
               titleStyle={{
@@ -52,21 +52,22 @@ export default function Agendas() {
               left={() => <Avatar.Image source={churras} />}
             ></Card.Title>
           </TouchableRipple>
-          <Divider
-            style={{
-              width: 380,
-              backgroundColor: "tomato",
-              alignSelf: "center",
-              margin: 5,
-            }}
-          />
+
           <TouchableRipple
             onPress={() => {
               navigation.navigate("Salão");
             }}
           >
             <Card.Title
-              style={{ marginTop: 10 }}
+              style={{
+                marginTop: 10,
+                backgroundColor: "white",
+                width: 400,
+                alignSelf: "center",
+                borderRadius: 8,
+                shadowOpacity: 0.3,
+                height: 90,
+              }}
               titleStyle={{
                 fontFamily: "Poppins",
                 color: "tomato",
@@ -82,14 +83,6 @@ export default function Agendas() {
               left={() => <Avatar.Image source={salao} />}
             ></Card.Title>
           </TouchableRipple>
-          <Divider
-            style={{
-              width: 380,
-              backgroundColor: "tomato",
-              alignSelf: "center",
-              margin: 5,
-            }}
-          />
         </View>
       </ScrollView>
     </>
