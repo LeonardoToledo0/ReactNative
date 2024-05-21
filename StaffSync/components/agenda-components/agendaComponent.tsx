@@ -21,7 +21,16 @@ export default function Agendas() {
         <ConfigNome style={{ marginTop: 20 }}>
           Faça Agora sua <SobreNome>Reserva</SobreNome>
         </ConfigNome>
-        <View style={{ flex: 1 }}>
+        <View
+          style={{
+            width: "95%",
+            alignSelf: "center",
+            alignItems: "center",
+            borderRadius: 8,
+            backgroundColor: "white",
+            marginTop: 10,
+          }}
+        >
           <TouchableRipple
             onPress={() => {
               navigation.navigate("Churrasqueira");
@@ -29,30 +38,40 @@ export default function Agendas() {
           >
             <Card.Title
               style={{
-                marginTop: 10,
+                margin: 10,
                 backgroundColor: "white",
-                width: 400,
+                width: "95%",
                 alignSelf: "center",
                 borderRadius: 8,
-                shadowOpacity: 0.3,
-                height: 90,
               }}
               title="Churrasqueira"
               subtitle="Agendar"
               titleStyle={{
                 fontFamily: "Poppins",
-                color: "tomato",
+                color: "black",
                 marginLeft: 20,
+                fontSize: 18,
               }}
               subtitleStyle={{
                 marginLeft: 20,
-                fontFamily: "Poppins",
-                color: "gray",
+                fontSize: 16,
+                color: "black",
               }}
               left={() => <Avatar.Image source={churras} />}
             ></Card.Title>
           </TouchableRipple>
-
+        </View>
+        <View
+          style={{
+            width: "95%",
+            alignSelf: "center",
+            alignItems: "center",
+            borderRadius: 8,
+            backgroundColor: "white",
+            marginTop: 10,
+            flexDirection: "row",
+          }}
+        >
           <TouchableRipple
             onPress={() => {
               navigation.navigate("Salão");
@@ -60,23 +79,23 @@ export default function Agendas() {
           >
             <Card.Title
               style={{
-                marginTop: 10,
                 backgroundColor: "white",
-                width: 400,
+                width: "95%",
                 alignSelf: "center",
                 borderRadius: 8,
-                shadowOpacity: 0.3,
-                height: 90,
+                margin: 10,
               }}
               titleStyle={{
                 fontFamily: "Poppins",
-                color: "tomato",
+                color: "black",
                 marginLeft: 20,
+                fontSize: 18,
               }}
               subtitleStyle={{
                 marginLeft: 20,
-                fontFamily: "Poppins",
-                color: "gray",
+                fontSize: 16,
+
+                color: "black",
               }}
               title="Salão"
               subtitle="Agendar"
