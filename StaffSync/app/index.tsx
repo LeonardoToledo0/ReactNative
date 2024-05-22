@@ -5,9 +5,10 @@ import TabNavigator from "./navigations/TabsNavigator";
 import LoginScreen from "../views/LoginScreen";
 import { store } from "../hooks/configureStore";
 import * as Font from "expo-font";
-import { DefaultTheme, PaperProvider } from "react-native-paper";
+import { Avatar, DefaultTheme, PaperProvider } from "react-native-paper";
 import LoadingScreen from "../views/LoadingScreen";
-import { View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator, Text } from "react-native";
+import TabConversasId from "./navigations/tabConversasId";
 
 const theme = {
   ...DefaultTheme,
@@ -16,7 +17,7 @@ const theme = {
     tomato: "tomato",
   },
 };
-
+const perfil = require("@/assets/images/perfilhomen.jpg");
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -43,7 +44,12 @@ export default function App() {
   return (
     <Provider store={store}>
       <PaperProvider>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+            headerTintColor: "tomato",
+            headerTitleStyle: { fontFamily: "Poppins" },
+          }}
+        >
           <Stack.Screen
             name="Loading"
             component={LoadingScreen}
@@ -67,6 +73,39 @@ export default function App() {
             component={TabNavigator}
             options={{
               headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="ConversasId"
+            component={TabConversasId}
+            options={{
+              headerBackTitle: " ",
+              headerTitle: () => (
+                <View
+                  style={{
+                    width: 300,
+                    flexDirection: "row",
+                    marginLeft: -30,
+                  }}
+                >
+                  <Avatar.Image
+                    style={{
+                      backgroundColor: "transparent",
+                      marginLeft: 10,
+                    }}
+                    source={perfil}
+                    size={40}
+                  />
+                  <View style={{ marginLeft: 10 }}>
+                    <Text style={{ fontFamily: "Poppins", fontSize: 16 }}>
+                      Ricardo
+                    </Text>
+                    <Text style={{ fontSize: 12, color: "tomato" }}>
+                      Online
+                    </Text>
+                  </View>
+                </View>
+              ),
             }}
           />
         </Stack.Navigator>
