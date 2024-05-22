@@ -14,11 +14,7 @@ const NavigationsMensagem = () => {
         headerTitleStyle: { fontFamily: "Poppins" },
       }}
     >
-      <Stack.Screen
-        name="Mensagens"
-        component={Conversas}
-        options={{ headerTitle: "" }}
-      />
+      <Stack.Screen name="Mensagens" component={Conversas} />
       <Stack.Screen name="Ligações" component={Ligacoes} />
       <Stack.Screen name="Contatos" component={Contato} />
     </Stack.Navigator>

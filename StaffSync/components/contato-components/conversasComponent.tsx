@@ -15,6 +15,7 @@ interface Conversa {
   visto: string;
   mensagem: string;
   readonly: boolean;
+  online: boolean;
 }
 
 export default function Conversas() {
@@ -27,16 +28,18 @@ export default function Conversas() {
       username: "Ricardo",
       user: require("@/assets/images/perfilhomen.jpg"),
       visto: "14:30",
-      mensagem: "Ola Jhoe Tudo Bem ?",
+      mensagem: "Olá Jhoe, tudo bem?",
       readonly: false,
+      online: true,
     },
     {
       id: 2,
       username: "Maria",
       user: require("@/assets/images/perfilmulher.jpg"),
       visto: "18:30",
-      mensagem: "Ola Jhoe como voce está?",
+      mensagem: "Olá Jhoe, como você está?",
       readonly: true,
+      online: true,
     },
   ];
 
@@ -63,21 +66,31 @@ export default function Conversas() {
             }}
           >
             <Avatar.Image style={{ margin: 10 }} source={conversa.user} />
-            <View>
+            <View style={{ flex: 1 }}>
               <View
                 style={{
+                  marginLeft: 10,
                   flexDirection: "row",
+                  alignItems: "center",
                   justifyContent: "space-between",
-                  width: "85%",
                 }}
               >
-                <Text
-                  style={{ fontFamily: "Poppins", marginLeft: 5, fontSize: 18 }}
-                >
+                <Text style={{ fontFamily: "Poppins", fontSize: 18 }}>
                   {conversa.username}
                 </Text>
-                <Text style={{ fontFamily: "Poppins", fontSize: 16 }}>
-                  {conversa.visto}
+                <Text
+                  style={{
+                    fontFamily: "Poppins",
+                    fontSize: 12,
+                    marginRight: 20,
+                    marginTop: 4,
+                  }}
+                >
+                  {conversa.online ? (
+                    <Text style={{ color: "tomato" }}>Online</Text>
+                  ) : (
+                    <Text>{conversa.visto}</Text>
+                  )}
                 </Text>
               </View>
               <View style={{ flexDirection: "row", margin: 5, gap: 2 }}>
