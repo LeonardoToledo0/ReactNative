@@ -5,6 +5,7 @@ import ConfigReducer from "@/hooks/configSlice";
 import FabReducer from "@/hooks/fabslice";
 import NavigationsReducer from "@/hooks/navigationsSlice";
 import ConversasReducer from "@/hooks/conversasSlice";
+import UsuarioReducer from "@/hooks/usuarioSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     Fab: FabReducer,
     Navigations: NavigationsReducer,
     Conversas: ConversasReducer,
+    Usuario: UsuarioReducer,
   },
 });
 

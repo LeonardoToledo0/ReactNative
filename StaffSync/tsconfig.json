@@ -4,11 +4,27 @@
     "module": "esnext",
     "strict": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "files": [
+    "expo-env.d.ts"
+  ],
   "resolve": {
-    "extensions": [".tsx", ".ts", ".js", ".json", ".png"]
+    "extensions": [
+      ".tsx",
+      ".ts",
+      ".js",
+      ".json",
+      ".png"
+    ]
   }
 }
