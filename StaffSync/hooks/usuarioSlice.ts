@@ -10,6 +10,8 @@ interface UsuarioState {
   erro: string;
   loading: boolean;
   sucesso: boolean;
+  getemail: string;
+  getsenha: string;
 }
 const initialState: UsuarioState = {
   key: "",
@@ -19,6 +21,8 @@ const initialState: UsuarioState = {
   senha: "",
   telefone: "",
   erro: "",
+  getemail: "",
+  getsenha: "",
   loading: true,
   sucesso: false,
 };
@@ -54,9 +58,17 @@ const usuarioSlice = createSlice({
     setSucesso: (state, action: PayloadAction<boolean>) => {
       state.sucesso = action.payload;
     },
+    setGetEmail: (state, action: PayloadAction<string>) => {
+      state.getemail = action.payload;
+    },
+    setGetSenha: (state, action: PayloadAction<string>) => {
+      state.getsenha = action.payload;
+    },
   },
 });
 export const {
+  setGetEmail,
+  setGetSenha,
   setEmail,
   setErro,
   setImagemPerfil,
