@@ -11,7 +11,7 @@ import firebaseConfig from "../config/firebaseConfig";
 
 interface Usuario {
   nome: string;
-  email: string;
+  telefone: string;
   senha: string;
   createdAt: Date;
 }
@@ -22,13 +22,15 @@ const adicionarUsuario = async (usuario: Usuario) => {
   const db = getFirestore(app);
   const usuariosCollection = collection(db, "usuarios");
 
-  const emailQuery = query(
+  const telefoneQuery = query(
     usuariosCollection,
-    where("email", "==", usuario.email)
+    where("telefone", "==", usuario.telefone)
   );
-  const emailSnapshot = await getDocs(emailQuery);
-  if (!emailSnapshot.empty) {
-    throw new Error("E-mail já cadastrado. Por favor, use outro e-mail");
+  const telefoneSnapshot = await getDocs(telefoneQuery);
+  if (!telefoneSnapshot.empty) {
+    throw new Error(
+      "O numero de telefone já está cadastrado. Por favor, use outro numero"
+    );
   }
   try {
     const novoUsuarioRef = await addDoc(usuariosCollection, usuario);

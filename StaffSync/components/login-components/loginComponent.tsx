@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/hooks/configureStore";
 import login from "@/api/firebase/auth";
 import { Alert } from "react-native";
-import { setGetEmail, setGetSenha } from "@/hooks/usuarioSlice";
+import { setGetSenha, setGetTelefone } from "@/hooks/usuarioSlice";
 
 type RootStackParamList = {
   Home: undefined;
@@ -27,14 +27,14 @@ type LoginScreenNavigationProp = StackNavigationProp<
 
 export default function LoginComponent() {
   const dispatch = useDispatch();
-  const { getsenha, getemail } = useSelector(
+  const { getsenha, gettelefone } = useSelector(
     (state: RootState) => state.Usuario
   );
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const handleLogin = async () => {
     try {
-      const isAuth = await login({ email: getemail, senha: getsenha });
+      const isAuth = await login({ telefone: gettelefone, senha: getsenha });
       if (isAuth) {
         navigation.navigate("Home");
       } else {
@@ -55,10 +55,10 @@ export default function LoginComponent() {
         </LoginText>
         <LoginInputWrapper>
           <LoginInput
-            placeholder="Email"
+            placeholder="Numero de Telefone"
             placeholderTextColor="gray"
-            value={getemail}
-            onChangeText={(text) => dispatch(setGetEmail(text))}
+            value={gettelefone}
+            onChangeText={(text) => dispatch(setGetTelefone(text))}
           />
         </LoginInputWrapper>
         <LoginInputWrapper>

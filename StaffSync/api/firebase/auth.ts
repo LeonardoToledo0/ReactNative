@@ -9,7 +9,7 @@ import {
 } from "firebase/firestore";
 
 interface Usuario {
-  email: string;
+  telefone: string;
   senha: string;
 }
 
@@ -18,7 +18,10 @@ const app = initializeApp(firebaseConfig);
 const login = async (usuario: Usuario): Promise<boolean> => {
   const db = getFirestore(app);
   const usuariosCollection = collection(db, "usuarios");
-  const q = query(usuariosCollection, where("email", "==", usuario.email));
+  const q = query(
+    usuariosCollection,
+    where("telefone", "==", usuario.telefone)
+  );
   const querySnapshot = await getDocs(q);
 
   if (querySnapshot.empty) {

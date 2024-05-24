@@ -10,30 +10,41 @@ import {
 } from "@/styles/LoginStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/hooks/configureStore";
-import { setNome, setEmail, setSenha } from "@/hooks/usuarioSlice";
+import {
+  resetUsuario,
+  setNome,
+  setSenha,
+  setTelefone,
+} from "@/hooks/usuarioSlice";
 import { Alert } from "react-native";
 import adicionarUsuario from "@/api/firebase/adicionarUsuario";
 
 export default function SignUpComponent() {
   const dispatch = useDispatch();
-  const { nome, email, senha } = useSelector(
+  const { nome, telefone, senha } = useSelector(
     (state: RootState) => state.Usuario
   );
 
   const handleAdicionarUsuario = async () => {
-    if (!nome || !email || !senha) {
+    if (!nome || !telefone || !senha) {
       Alert.alert("Por favor, preencha todos os campos !!");
       return;
     }
     try {
-      await adicionarUsuario({ nome, email, senha, createdAt: new Date() });
+      await adicionarUsuario({ nome, telefone, senha, createdAt: new Date() });
       Alert.alert("Cadastro com Sucesso!!");
+      dispatch(resetUsuario());
     } catch (error) {
       if (error instanceof Error) {
-        if (error.message.includes("E-mail já cadastrado")) {
+        if (error.message.includes("Numero de telefone já cadastrado")) {
           Alert.alert(
             "Erro",
-            "E-mail já cadastrado. Por favor, use outro e-mail."
+            "Numero de telefone já cadastrado. Por favor, use outro numero."
+          );
+        } else {
+          Alert.alert(
+            "Erro",
+            "Erro ao cadastrar usuário. Por favor, tente novamente."
           );
         }
       } else {
@@ -42,10 +53,6 @@ export default function SignUpComponent() {
           "Erro ao cadastrar usuário. Por favor, tente novamente."
         );
       }
-      Alert.alert(
-        "Erro",
-        "Erro ao cadastrar usuário. Por favor, tente novamente."
-      );
     }
   };
 
@@ -65,10 +72,10 @@ export default function SignUpComponent() {
       </LoginInputWrapper>
       <LoginInputWrapper>
         <LoginInput
-          placeholder="Email"
+          placeholder="Numero Telefone"
           placeholderTextColor="gray"
-          value={email}
-          onChangeText={(text) => dispatch(setEmail(text))}
+          value={telefone}
+          onChangeText={(text) => dispatch(setTelefone(text))}
         />
       </LoginInputWrapper>
       <LoginInputWrapper>

@@ -12,6 +12,7 @@ interface UsuarioState {
   sucesso: boolean;
   getemail: string;
   getsenha: string;
+  gettelefone: string;
 }
 const initialState: UsuarioState = {
   key: "",
@@ -23,6 +24,7 @@ const initialState: UsuarioState = {
   erro: "",
   getemail: "",
   getsenha: "",
+  gettelefone: "",
   loading: true,
   sucesso: false,
 };
@@ -64,9 +66,17 @@ const usuarioSlice = createSlice({
     setGetSenha: (state, action: PayloadAction<string>) => {
       state.getsenha = action.payload;
     },
+    setGetTelefone: (state, action: PayloadAction<string>) => {
+      state.gettelefone = action.payload;
+    },
+    resetUsuario(state) {
+      (state.nome = ""), (state.senha = ""), (state.telefone = "");
+    },
   },
 });
+
 export const {
+  setGetTelefone,
   setGetEmail,
   setGetSenha,
   setEmail,
@@ -78,5 +88,6 @@ export const {
   setTelefone,
   setSucesso,
   setLoading,
+  resetUsuario,
 } = usuarioSlice.actions;
 export default usuarioSlice.reducer;
