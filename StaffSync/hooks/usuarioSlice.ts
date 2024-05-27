@@ -1,10 +1,16 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-interface UsuarioState {
+interface Veiculo {
+  marca: string;
+  modelo: string;
+  cor: string;
+  placa: string;
+}
+interface Usuarios {
   key: string;
   nome: string;
   email: string;
-  imagemPerfil: string;
+  fotoPerfil: string;
   senha: string;
   telefone: string;
   erro: string;
@@ -13,12 +19,39 @@ interface UsuarioState {
   getemail: string;
   getsenha: string;
   gettelefone: string;
+  endereco: string;
+  numeroApartamento: string;
+  numeroVaga: string | null;
+  veiculo: Veiculo[];
+  bloco: string | null;
+}
+
+interface UsuarioState {
+  key: string;
+  nome: string;
+  email: string;
+  fotoPerfil: string;
+  senha: string;
+  telefone: string;
+  erro: string;
+  loading: boolean;
+  sucesso: boolean;
+  getemail: string;
+  getsenha: string;
+  gettelefone: string;
+  endereco: string;
+  numeroApartamento: string;
+  numeroVaga: string | null;
+  veiculo: Veiculo[];
+  bloco: string | null;
+  usuarios: Usuarios[];
+  rota: string;
 }
 const initialState: UsuarioState = {
   key: "",
   nome: "",
   email: "",
-  imagemPerfil: "",
+  fotoPerfil: "",
   senha: "",
   telefone: "",
   erro: "",
@@ -27,6 +60,13 @@ const initialState: UsuarioState = {
   gettelefone: "",
   loading: true,
   sucesso: false,
+  endereco: "",
+  numeroApartamento: "",
+  numeroVaga: null,
+  bloco: null,
+  veiculo: [],
+  usuarios: [],
+  rota: "",
 };
 
 const usuarioSlice = createSlice({
@@ -42,8 +82,8 @@ const usuarioSlice = createSlice({
     setEmail: (state, action: PayloadAction<string>) => {
       state.email = action.payload;
     },
-    setImagemPerfil: (state, action: PayloadAction<string>) => {
-      state.imagemPerfil = action.payload;
+    setFotoPerfil: (state, action: PayloadAction<string>) => {
+      state.fotoPerfil = action.payload;
     },
     setSenha: (state, action: PayloadAction<string>) => {
       state.senha = action.payload;
@@ -69,8 +109,38 @@ const usuarioSlice = createSlice({
     setGetTelefone: (state, action: PayloadAction<string>) => {
       state.gettelefone = action.payload;
     },
+    setEndereco: (state, action: PayloadAction<string>) => {
+      state.endereco = action.payload;
+    },
+    setNumeroApartamento: (state, action: PayloadAction<string>) => {
+      state.numeroApartamento = action.payload;
+    },
+    setNumeroVaga: (state, action: PayloadAction<string | null>) => {
+      state.numeroVaga = action.payload;
+    },
+    setVeiculo: (state, action: PayloadAction<Veiculo[]>) => {
+      state.veiculo = action.payload;
+    },
+    setBloco: (state, action: PayloadAction<string | null>) => {
+      state.bloco = action.payload;
+    },
+    setUsuarios: (state, action: PayloadAction<Usuarios[]>) => {
+      state.usuarios = action.payload;
+    },
+    setRota: (state, action: PayloadAction<string>) => {
+      state.rota = action.payload;
+    },
+
     resetUsuario(state) {
-      (state.nome = ""), (state.senha = ""), (state.telefone = "");
+      (state.nome = ""),
+        (state.senha = ""),
+        (state.telefone = ""),
+        (state.endereco = ""),
+        (state.numeroApartamento = ""),
+        (state.numeroVaga = null),
+        (state.veiculo = []),
+        (state.bloco = null),
+        (state.usuarios = []);
     },
   },
 });
@@ -81,13 +151,20 @@ export const {
   setGetSenha,
   setEmail,
   setErro,
-  setImagemPerfil,
+  setFotoPerfil,
   setKey,
   setNome,
   setSenha,
   setTelefone,
   setSucesso,
   setLoading,
+  setEndereco,
+  setBloco,
+  setNumeroApartamento,
+  setVeiculo,
+  setNumeroVaga,
+  setUsuarios,
+  setRota,
   resetUsuario,
 } = usuarioSlice.actions;
 export default usuarioSlice.reducer;

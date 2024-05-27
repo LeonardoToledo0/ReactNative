@@ -1,29 +1,29 @@
+// ConversasId.js
+
 import React from "react";
-import { View, Text, ScrollView, ImageBackground } from "react-native";
+import { ScrollView, View, Text, ImageBackground } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
 
 type RootStackParamList = {
-  ConversasId: { conversa: Conversa };
+  ConversasId: { contato: Contato };
 };
 
-interface Conversa {
-  id: number;
-  user: any;
-  username: string;
-  status: string;
-  visto: string;
-  mensagem: string;
-  readonly: boolean;
+interface Contato {
+  nome: string;
+  telefone: string;
+  fotoPerfil: string | null;
   online: boolean;
-  backuser: any;
 }
-const back = require("@/assets/images/back3.jpg");
+
 const ConversasId = () => {
   const route = useRoute<RouteProp<RootStackParamList, "ConversasId">>();
-  const { conversa } = route.params;
+  const { contato } = route.params;
 
   return (
-    <ImageBackground source={back} style={{ flex: 1 }}>
+    <ImageBackground
+      source={require("@/assets/images/back3.jpg")}
+      style={{ flex: 1 }}
+    >
       <ScrollView>
         <View style={{ flexDirection: "row", margin: 5 }}>
           <Text
@@ -40,7 +40,7 @@ const ConversasId = () => {
               overflow: "hidden",
             }}
           >
-            {conversa.mensagem}
+            Iniciar conversa com {contato.nome}
           </Text>
         </View>
       </ScrollView>

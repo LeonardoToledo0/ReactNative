@@ -8,12 +8,19 @@ import TabNavigator from "./navigations/TabsNavigator";
 import LoginScreen from "../views/LoginScreen";
 import { store } from "../hooks/configureStore";
 import * as Font from "expo-font";
-import { DefaultTheme, PaperProvider, Avatar, Text } from "react-native-paper";
+import {
+  DefaultTheme,
+  PaperProvider,
+  Avatar,
+  Text,
+  TouchableRipple,
+} from "react-native-paper";
 import LoadingScreen from "../views/LoadingScreen";
 import { View, ActivityIndicator } from "react-native";
 import ConversasId from "@/components/contato-components/conversasID";
 import Conversas from "@/components/contato-components/conversasComponent";
 import { UserProvider } from "@/utils/usecontext";
+import { getUserData } from "@/api/firebase/authUtils";
 
 const theme = {
   ...DefaultTheme,
@@ -28,23 +35,32 @@ type RootStackParamList = {
   Login: undefined;
   Home: undefined;
   Conversas: undefined;
-  ConversasId: { conversa: Conversa };
+  ConversasId: { contato: Contato };
 };
 
-interface Conversa {
-  id: number;
-  user: any;
-  username: string;
-  visto: string;
-  mensagem: string;
-  readonly: boolean;
+interface Contato {
+  nome: string;
+  telefone: string;
+  fotoPerfil: string | null;
   online: boolean;
 }
 
 const Stack = createStackNavigator<RootStackParamList>();
+const userImage = require("@/assets/images/user.png");
 
 export default function App() {
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getUserData();
+      setUserData(data);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const loadFonts = async () => {
@@ -56,13 +72,28 @@ export default function App() {
     loadFonts();
   }, []);
 
-  if (!fontsLoaded) {
+  if (!fontsLoaded || loading) {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator size="large" color="tomato" />
       </View>
     );
   }
+  const renderAvatar = (fotoPerfil: string | null) => {
+    if (fotoPerfil) {
+      return (
+        <Avatar.Image
+          style={{ margin: 10 }}
+          size={40}
+          source={{ uri: fotoPerfil }}
+        />
+      );
+    } else {
+      return (
+        <Avatar.Image style={{ margin: 10 }} size={40} source={userImage} />
+      );
+    }
+  };
 
   return (
     <UserProvider>
@@ -109,9 +140,7 @@ export default function App() {
               name="ConversasId"
               component={ConversasId}
               options={({ route }) => {
-                const conversa = (
-                  route.params as RootStackParamList["ConversasId"]
-                ).conversa;
+                const contato = route.params?.contato;
                 return {
                   headerBackTitle: " ",
                   headerTitle: () => (
@@ -119,12 +148,13 @@ export default function App() {
                       style={{
                         flexDirection: "row",
                         alignItems: "center",
-
                         width: 320,
                         marginLeft: -40,
                       }}
                     >
-                      <Avatar.Image source={conversa.user} size={40} />
+                      <TouchableRipple style={{ marginTop: -10 }}>
+                        {renderAvatar(contato.fotoPerfil)}
+                      </TouchableRipple>
                       <View>
                         <Text
                           style={{
@@ -133,29 +163,17 @@ export default function App() {
                             fontFamily: "Poppins",
                           }}
                         >
-                          {conversa.username}
+                          {contato.nome}
                         </Text>
-                        {conversa.online ? (
-                          <Text
-                            style={{
-                              marginLeft: 10,
-                              color: "tomato",
-                              marginTop: -3,
-                            }}
-                          >
-                            Online
-                          </Text>
-                        ) : (
-                          <Text
-                            style={{
-                              marginLeft: 10,
-                              color: "black",
-                              marginTop: -3,
-                            }}
-                          >
-                            {conversa.visto}
-                          </Text>
-                        )}
+                        <Text
+                          style={{
+                            marginLeft: 10,
+                            color: contato.online ? "tomato" : "black",
+                            marginTop: -3,
+                          }}
+                        >
+                          {contato.online ? "Online" : "Offline"}
+                        </Text>
                       </View>
                     </View>
                   ),

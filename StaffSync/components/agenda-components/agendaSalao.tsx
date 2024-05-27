@@ -23,7 +23,6 @@ export default function AgendaSalao() {
     undefined
   );
   const [selectTime, setSelectTime] = useState("");
-  const [showTimePicker, setShowTimePicker] = useState(false);
 
   const handleDayPress = (day: any) => {
     const selectedDateString = day.dateString;
@@ -37,15 +36,14 @@ export default function AgendaSalao() {
 
   return (
     <ScrollView>
-      <Card style={{ marginTop: 10, width: "95%", alignSelf: "center" }}>
+      <Card style={{ marginTop: 20, width: "90%", alignSelf: "center" }}>
         <Card.Cover source={salao} />
       </Card>
       <Card
         style={{
-          marginTop: 10,
-          width: "95%",
+          marginTop: 20,
+          width: "90%",
           alignSelf: "center",
-          alignItems: "center",
           backgroundColor: "white",
         }}
       >
@@ -79,7 +77,7 @@ export default function AgendaSalao() {
       <View
         style={{
           display: "flex",
-          width: "95%",
+          width: "90%",
           marginTop: 20,
           alignSelf: "center",
           backgroundColor: "white",
@@ -118,7 +116,7 @@ export default function AgendaSalao() {
 
           alignSelf: "center",
           backgroundColor: "tomato",
-          width: "95%",
+          width: "90%",
           borderRadius: 8,
         }}
         onPress={() => {}}
