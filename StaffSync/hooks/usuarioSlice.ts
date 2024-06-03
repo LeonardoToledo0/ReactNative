@@ -1,52 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Veiculo, Usuarios, UsuarioState } from "@/types/type";
 
-interface Veiculo {
-  marca: string;
-  modelo: string;
-  cor: string;
-  placa: string;
-}
-interface Usuarios {
-  key: string;
-  nome: string;
-  email: string;
-  fotoPerfil: string;
-  senha: string;
-  telefone: string;
-  erro: string;
-  loading: boolean;
-  sucesso: boolean;
-  getemail: string;
-  getsenha: string;
-  gettelefone: string;
-  endereco: string;
-  numeroApartamento: string;
-  numeroVaga: string | null;
-  veiculo: Veiculo[];
-  bloco: string | null;
-}
-
-interface UsuarioState {
-  key: string;
-  nome: string;
-  email: string;
-  fotoPerfil: string;
-  senha: string;
-  telefone: string;
-  erro: string;
-  loading: boolean;
-  sucesso: boolean;
-  getemail: string;
-  getsenha: string;
-  gettelefone: string;
-  endereco: string;
-  numeroApartamento: string;
-  numeroVaga: string | null;
-  veiculo: Veiculo[];
-  bloco: string | null;
-  usuarios: Usuarios[];
-  rota: string;
-}
 const initialState: UsuarioState = {
   key: "",
   nome: "",

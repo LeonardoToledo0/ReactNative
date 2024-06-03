@@ -1,15 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Route } from "@/types/type";
 
-type Route = {
-  key: string;
-  title: string;
-  focusedIcon?: string;
-  unfocusedIcon?: string;
-  color?: string;
-  badge?: boolean | string | number;
-  accessibilityLabel?: string;
-  testID?: string;
-};
 interface Navigations {
   index: number;
   routes: Route[];

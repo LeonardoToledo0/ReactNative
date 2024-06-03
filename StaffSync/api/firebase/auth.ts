@@ -7,20 +7,18 @@ import {
   query,
   where,
 } from "firebase/firestore";
-
-interface Usuario {
-  telefone: string;
-  senha: string;
-}
+import { Credenciais, Usuario } from "@/types/type";
 
 const app = initializeApp(firebaseConfig);
 
-const login = async (usuario: Usuario): Promise<boolean> => {
+export default async function login(
+  credenciais: Credenciais
+): Promise<boolean> {
   const db = getFirestore(app);
   const usuariosCollection = collection(db, "usuarios");
   const q = query(
     usuariosCollection,
-    where("telefone", "==", usuario.telefone)
+    where("telefone", "==", credenciais.telefone)
   );
   const querySnapshot = await getDocs(q);
 
@@ -30,12 +28,10 @@ const login = async (usuario: Usuario): Promise<boolean> => {
     let loginSucesso = false;
     querySnapshot.forEach((doc) => {
       const usuarioDb = doc.data() as Usuario;
-      if (usuarioDb.senha === usuario.senha) {
+      if (usuarioDb.senha === credenciais.senha) {
         loginSucesso = true;
       }
     });
     return loginSucesso;
   }
-};
-
-export default login;
+}

@@ -6,6 +6,7 @@ import compareContato from "@/api/firebase/buscarContatos";
 import buscarContatosNaoNoApp from "@/api/firebase/buscarContatosNaoApp";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
+import { Contato } from "@/types/type";
 
 type RootStackParamList = {
   ConversasId: { contato: Contato };
@@ -13,14 +14,7 @@ type RootStackParamList = {
 
 const userImage = require("@/assets/images/user.png");
 
-interface Contato {
-  nome: string;
-  telefone: string;
-  fotoPerfil: string | null;
-  online: boolean;
-}
-
-export default function Contato() {
+export default function Contatos() {
   const [contatosEncontrados, setContatosEncontrados] = useState<Contato[]>([]);
   const [contatosCell, setContatosCell] = useState<Contato[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

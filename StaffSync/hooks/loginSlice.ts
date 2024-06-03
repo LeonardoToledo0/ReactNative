@@ -1,15 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-interface Login {
-  login: any[];
-  email: string;
-  password: string;
-  loading: boolean;
-  erro: string | null;
-  activeContent: string | null;
-  selectedButton: string | null;
-  isAppLoaded: boolean;
-}
+import { Login } from "@/types/type";
 
 const initialState: Login = {
   login: [],

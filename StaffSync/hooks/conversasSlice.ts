@@ -1,9 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-interface Conversas {
-  selectConversa: string;
-  activeContent: string | null;
-}
+import { Conversas } from "@/types/type";
 
 const initialState: Conversas = {
   selectConversa: "",

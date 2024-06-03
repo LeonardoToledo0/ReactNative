@@ -8,13 +8,7 @@ import {
 } from "firebase/firestore";
 import firebaseConfig from "../config/firebaseConfig";
 import { initializeApp } from "firebase/app";
-
-interface Contato {
-  nome: string;
-  telefone: string;
-  fotoPerfil: string | null;
-  online: boolean;
-}
+import { Contato } from "@/types/type";
 
 const getContatos = async () => {
   try {

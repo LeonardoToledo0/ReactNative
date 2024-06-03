@@ -8,13 +8,7 @@ import {
   where,
 } from "firebase/firestore";
 import firebaseConfig from "../config/firebaseConfig";
-
-interface Usuario {
-  nome: string;
-  telefone: string;
-  senha: string;
-  createdAt: Date;
-}
+import { Usuario } from "@/types/type";
 
 const app = initializeApp(firebaseConfig);
 

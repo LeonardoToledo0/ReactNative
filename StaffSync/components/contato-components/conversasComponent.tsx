@@ -3,29 +3,12 @@ import React from "react";
 import { ScrollView, Text, View } from "react-native";
 import { Avatar, Icon, TouchableRipple } from "react-native-paper";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { Conversa } from "@/types/type";
 
 type RootStackParamList = {
   ConversasId: { conversa: Conversa };
   PerfilContato: { conversa: Conversa };
 };
-
-interface Conversa {
-  id: number;
-  user: any;
-  username: string;
-  status: string;
-  visto: string;
-  mensagem: string;
-  readonly: boolean;
-  online: boolean;
-  backuser: any;
-  telefone: string;
-  cargo: string;
-  descricao: string;
-  responsabilidade: string;
-  qualificacoes: string;
-  interesses: string;
-}
 
 export default function Conversas() {
   const navigation =

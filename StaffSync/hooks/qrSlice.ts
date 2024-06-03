@@ -1,8 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-interface QRcode {
-  qrvalue: string;
-}
+import { QRcode } from "@/types/type";
 
 const initialState: QRcode = {
   qrvalue: "",

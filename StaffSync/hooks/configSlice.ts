@@ -1,9 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-interface Config {
-  selectConfig: string;
-  activeContent: string | null;
-}
+import { Config } from "@/types/type";
 
 const initialState: Config = {
   selectConfig: "",

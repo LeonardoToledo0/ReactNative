@@ -1,8 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Fab } from "@/types/type";
 
-interface Fab {
-  open: boolean;
-}
 const initialState: Fab = {
   open: false,
 };

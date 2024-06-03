@@ -3,17 +3,11 @@
 import React from "react";
 import { ScrollView, View, Text, ImageBackground } from "react-native";
 import { RouteProp, useRoute } from "@react-navigation/native";
+import { Contato } from "@/types/type";
 
 type RootStackParamList = {
   ConversasId: { contato: Contato };
 };
-
-interface Contato {
-  nome: string;
-  telefone: string;
-  fotoPerfil: string | null;
-  online: boolean;
-}
 
 const ConversasId = () => {
   const route = useRoute<RouteProp<RootStackParamList, "ConversasId">>();

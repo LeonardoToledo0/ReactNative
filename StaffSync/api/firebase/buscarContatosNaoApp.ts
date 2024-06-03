@@ -1,11 +1,5 @@
 import * as Contacts from "expo-contacts";
-
-interface Contato {
-  nome: string;
-  telefone: string;
-  fotoPerfil: string | null;
-  online: boolean;
-}
+import { Contato } from "@/types/type";
 
 const buscarContatosNaoNoApp = async (contatosNoApp: Contato[]) => {
   try {

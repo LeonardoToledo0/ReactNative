@@ -4,22 +4,13 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 import { Avatar, Card } from "react-native-paper";
 import NoticiasInput from "./NoticiasInput";
+import { Noticia } from "@/types/type";
 
 type RootStackParamList = {
   Post: { noticia: Noticia };
 };
 
 type PostScreenProps = NativeStackScreenProps<RootStackParamList, "Post">;
-
-interface Noticia {
-  id: number;
-  user: any;
-  username: string;
-  image: any;
-  title: string;
-  datepost: string;
-  description: string;
-}
 
 const Post: React.FC<PostScreenProps> = ({ route }) => {
   const navigation = useNavigation();

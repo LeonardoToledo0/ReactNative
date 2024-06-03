@@ -12,19 +12,12 @@ import {
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "react-native-screens/lib/typescript/native-stack/types";
+import { Noticia } from "@/types/type";
 
 type RootStackParamList = {
   Post: { noticia: Noticia };
 };
-interface Noticia {
-  id: number;
-  user: any;
-  username: string;
-  image: any;
-  title: string;
-  datepost: string;
-  description: string;
-}
+
 export default function FeedNoticias() {
   const navigation =
     useNavigation<NativeStackNavigationProp<RootStackParamList>>();

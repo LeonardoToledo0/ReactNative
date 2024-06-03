@@ -2,28 +2,11 @@ import React from "react";
 import { RouteProp, useRoute } from "@react-navigation/native";
 import { ScrollView, View, Text } from "react-native";
 import { Avatar, Card } from "react-native-paper";
+import { Conversa } from "@/types/type";
 
 type RootStackParamList = {
   PerfilContato: { conversa: Conversa };
 };
-
-interface Conversa {
-  id: number;
-  user: any;
-  username: string;
-  status: string;
-  visto: string;
-  mensagem: string;
-  readonly: boolean;
-  online: boolean;
-  backuser: any;
-  telefone: string;
-  cargo: string;
-  descricao: string;
-  responsabilidade: string;
-  qualificacoes: string;
-  interesses: string;
-}
 
 const PerfilContato = () => {
   const route = useRoute<RouteProp<RootStackParamList, "PerfilContato">>();
